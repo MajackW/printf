@@ -19,6 +19,7 @@ int putint(int n)
 	{
 		putchar('-');
 		c += 1;
+		n *= -1;
 	}
 	if (n == 0)
 	{

@@ -13,6 +13,9 @@ int _printf(const char *format, ...)
 	int n;
 	va_list ap;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(ap, format);
 	n = 0;
 	while (*format != '\0')
@@ -66,7 +69,6 @@ int mod(const char *s, va_list ap)
 	}
 	if (*s == '%')
 		putchar('%');
-	s++;
 	return (n);
 }
 /**
