@@ -82,7 +82,7 @@ int mod(const char *s, va_list ap)
 	else if (*s == 'x')
 		n = puthex(s, ap);
 	else if (*s == 'X')
-		n = putHEX(s, ap);
+		n = putHEX(ap);
 	return (n);
 }
 /**

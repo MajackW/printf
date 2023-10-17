@@ -14,6 +14,7 @@ int puthex(const char *s, va_list ap)
 	int d;
 	int i;
 	int dg;
+	char arr[10];
 
 	d = 1;
 
@@ -26,7 +27,6 @@ int puthex(const char *s, va_list ap)
 			un /= 16;
 		}
 		un = va_arg(ap, unsigned int);
-		char arr[d + 1];
 
 		for (i = d - 1; i >= 0; i--)
 		{
@@ -51,16 +51,16 @@ int puthex(const char *s, va_list ap)
 }
 /**
  * putHEX - same as puthex
- * @s: format string
  * @ap: variadic arguments
  * Return: int
  */
-int putHEX(const char *s, va_list ap)
+int putHEX(va_list ap)
 {
 	unsigned int un;
 	int d;
 	int i;
 	int dg;
+	char arr[10];
 	
 	d = 1;
 	un = va_arg(ap, unsigned int);
@@ -70,7 +70,6 @@ int putHEX(const char *s, va_list ap)
 		un /= 16;
 	}
 	un = va_arg(ap, unsigned int);
-	char arr[d + 1];
 
 	for (i = d - 1; i >= 0; i--)
 	{
