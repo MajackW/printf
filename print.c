@@ -64,6 +64,8 @@ int mod(const char *s, va_list ap)
 		p = va_arg(ap, char *);
 		n = _printf(p);
 	}
+	if (*s == '%')
+		putchar('%');
 	s++;
 	return (n);
 }
