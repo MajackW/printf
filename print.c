@@ -99,6 +99,8 @@ void back(const char *s)
 		putchar('\n');
 	else if (*s == '\\')
 		putchar('\\');
-	else
-		exit(98);
+	else if (*s == 'b')
+		putchar('\b');
+	else if (*s == 'r')
+		putchar('\r');
 }
