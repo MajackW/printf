@@ -18,34 +18,31 @@ int puthex(const char *s, va_list ap)
 
 	d = 1;
 
-	if (*s == 'x')
+	un = va_arg(ap, unsigned int);
+	while (un >= 16)
 	{
-		un = va_arg(ap, unsigned int);
-		while (un >= 16)
-		{
-			d++;
-			un /= 16;
-		}
-		un = va_arg(ap, unsigned int);
+		d++;
+		un /= 16;
+	}
+	un = va_arg(ap, unsigned int);
 
-		for (i = d - 1; i >= 0; i--)
+	for (i = d - 1; i >= 0; i--)
+	{
+		dg = un % 16;
+		if (dg < 10)
 		{
-			dg = un % 16;
-			if (dg < 10)
-			{
-				arr[i] = '0' + dg;
-			}
-			else
-			{
-				arr[i] = 'a' + (dg - 10);
-			}
-			un /= 16;
+			arr[i] = '0' + dg;
 		}
-		arr[d] = '\0';
-		for (i = 0; i <= d; i++)
+		else
 		{
-			putchar(arr[i]);
+			arr[i] = 'a' + (dg - 10);
 		}
+		un /= 16;
+	}
+	arr[d] = '\0';
+	for (i = 0; i <= d; i++)
+	{
+		putchar(arr[i]);
 	}
 	return (d);
 }
