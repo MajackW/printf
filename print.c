@@ -33,9 +33,12 @@ int _printf(const char *format, ...)
 			n += mod(format, ap);
 			format++;
 		}
-		putchar(*format);
-		n += 1;
-		format++;
+		if (*format != '%')
+		{
+			putchar(*format);
+			n += 1;
+			format++;
+		}
 	}
 	va_end(ap);
 	return (n);
@@ -57,18 +60,29 @@ int mod(const char *s, va_list ap)
 	{
 		p = va_arg(ap, char *);
 		n = _printf(p);
+		return (n);
 	}
-	if (*s == 'd' || *s == 'i')
+	else if (*s == 'd' || *s == 'i')
 	{
 		n = putint(va_arg(ap, int));
+		return (n);
 	}
-	if (*s == 'c')
+	else if (*s == 'c')
 	{
 		p = va_arg(ap, char *);
 		n = _printf(p);
+		return (n);
 	}
-	if (*s == '%')
+	else if (*s == '%')
+	{
+		n = 1;
 		putchar('%');
+		return (n);
+	}
+	else if (*s == 'x')
+		n = puthex(s, ap);
+	else if (*s == 'X')
+		n = putHEX(s, ap);
 	return (n);
 }
 /**
