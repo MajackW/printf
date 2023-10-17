@@ -8,7 +8,7 @@
  * @ap: variadic arguments
  * Return: integer
  */
-int puthex(const char *s, va_list ap)
+int puthex(va_list ap)
 {
 	unsigned int un;
 	int d;
