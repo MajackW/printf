@@ -4,7 +4,6 @@
 
 /**
  * puthex - prints hexadecimal
- * @s: format string
  * @ap: variadic arguments
  * Return: integer
  */
@@ -58,7 +57,7 @@ int putHEX(va_list ap)
 	int i;
 	int dg;
 	char arr[10];
-	
+
 	d = 1;
 	un = va_arg(ap, unsigned int);
 	while (un >= 16)
