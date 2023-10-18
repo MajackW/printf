@@ -53,6 +53,7 @@ int mod(const char *s, va_list ap)
 {
 	int n;
 	char *p;
+	int c;
 
 	n = 0;
 
@@ -69,9 +70,9 @@ int mod(const char *s, va_list ap)
 	}
 	else if (*s == 'c')
 	{
-		p = va_arg(ap, char *);
-		n = _printf(p);
-		return (n);
+		c = va_arg(ap, int);
+		putchar(c);
+		n += 1;
 	}
 	else if (*s == '%')
 	{
