@@ -1,10 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
-int _printf(const char *format, ...);
-void back(const char *s);
+
+int _printf(const char *fornmat, ...);
 int mod(const char *s, va_list ap);
+void back(const char *s);
 int putint(int n);
-void print(int n);
-int puthex(va_list ap);
-int putHEX(va_list ap);
+int uns(unsigned int n);
 #endif

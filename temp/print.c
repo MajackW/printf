@@ -61,12 +61,10 @@ int mod(const char *s, va_list ap)
 	{
 		p = va_arg(ap, char *);
 		n = _printf(p);
-		return (n);
 	}
 	else if (*s == 'd' || *s == 'i')
 	{
 		n = putint(va_arg(ap, int));
-		return (n);
 	}
 	else if (*s == 'c')
 	{
@@ -78,7 +76,6 @@ int mod(const char *s, va_list ap)
 	{
 		n = 1;
 		putchar('%');
-		return (n);
 	}
 	else if (*s == 'x')
 		n = puthex(ap);

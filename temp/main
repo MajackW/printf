@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include "main.h"
+#include <limits.h>
+
+void main(void)
+{
+	int n;
+	n = _printf("complete the sentence: you %s nothing jon snow.\n", (char *)0);
+	printf("%d\n", n);
+}
